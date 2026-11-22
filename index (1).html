@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Paras Goyal · graphic design, social media creative work, editorial design and video content." />
+  <meta name="theme-color" content="#f5d928" />
+  <title>Paras Goyal | Graphic Designer & Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #f5d928;
+      --yellow-soft: #fff4a8;
+      --black: #111111;
+      --white: #fff;
+      --paper: #f7f6f1;
+      --grey: #77766f;
+      --line: rgba(17,17,17,.18);
+      --max: 1240px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--black); font-family: "DM Sans", Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .display { font-family: "Archivo Black", Impact, sans-serif; text-transform: uppercase; letter-spacing: -.055em; line-height: .88; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(247,246,241,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: "Archivo Black", sans-serif; font-size: 1.05rem; letter-spacing: -.04em; }
+    .brand span { display: inline-block; background: var(--yellow); padding: 7px 9px; margin-right: 8px; }
+    .navlinks { display: flex; gap: 26px; align-items: center; font-size: .82rem; font-weight: 700; }
+    .navlinks a { transition: opacity .2s; }
+    .navlinks a:hover { opacity: .55; }
+    .nav-cta, .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; border: 1.5px solid var(--black); padding: 13px 18px; font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; transition: transform .2s, background .2s; }
+    .nav-cta, .btn.primary { background: var(--yellow); }
+    .nav-cta:hover, .btn:hover { transform: translateY(-3px); }
+    .menu-toggle { display: none; background: transparent; border: 0; font-size: 1.5rem; }
+    .hero { background: var(--yellow); overflow: hidden; position: relative; padding: 58px 0 66px; }
+    .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 42px; align-items: center; }
+    .hero-kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+    .hero-kicker:before { content: ""; width: 42px; height: 2px; background: var(--black); }
+    .hero h1 { font-size: clamp(4.3rem, 10.8vw, 9.5rem); margin: 0; max-width: 780px; }
+    .hero h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--black); }
+    .hero-copy { max-width: 490px; margin: 30px 0 26px; font-size: 1.03rem; line-height: 1.65; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn.secondary { background: transparent; }
+    .hero-art { min-height: 490px; position: relative; display: grid; place-items: center; }
+    .portrait-placeholder { width: min(100%, 430px); aspect-ratio: .78; background: #e9e6dc; border: 2px solid var(--black); position: relative; overflow: hidden; display: grid; place-items: center; text-align: center; padding: 28px; }
+    .portrait-placeholder:before { content: ""; }
+    .portrait-placeholder img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 24%; display: block; }
+    .floating-note { position: absolute; right: -5px; bottom: 38px; background: var(--black); color: white; padding: 16px 18px; transform: rotate(-5deg); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .hero-index { position: absolute; right: 24px; top: 50%; writing-mode: vertical-rl; font-size: .65rem; font-weight: 800; letter-spacing: .16em; }
+    section { padding: 108px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 48px; }
+    .section-head h2 { font-size: clamp(3.2rem, 7vw, 6.4rem); margin: 12px 0 0; }
+    .section-intro { max-width: 360px; color: var(--grey); line-height: 1.7; font-size: .95rem; }
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; align-items: start; }
+    .about-stamp { background: var(--yellow); aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--black); }
+    .about-stamp strong { font-family: "Archivo Black"; font-size: clamp(5rem, 12vw, 10rem); letter-spacing: -.1em; }
+    .about-copy h3 { font-family: "Archivo Black"; font-size: clamp(2rem, 4vw, 3.5rem); line-height: .98; letter-spacing: -.05em; text-transform: uppercase; margin: 0 0 24px; }
+    .about-copy p { max-width: 720px; color: #555; line-height: 1.85; font-size: 1rem; }
+    .mini-values { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 36px; }
+    .value { border-top: 2px solid var(--black); padding-top: 13px; }
+    .value b { display: block; font-size: .82rem; text-transform: uppercase; margin-bottom: 8px; }
+    .value span { color: var(--grey); font-size: .78rem; line-height: 1.5; }
+    .work { background: var(--paper); }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: -18px 0 34px; }
+    .filter { border: 1px solid var(--black); background: transparent; padding: 9px 14px; font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; cursor: pointer; }
+    .filter.active, .filter:hover { background: var(--yellow); }
+    .project-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 28px 20px; }
+    .project { grid-column: span 6; min-width: 0; }
+    .project:nth-child(3n+2) { grid-column: span 5; }
+    .project:nth-child(3n+3) { grid-column: span 7; }
+    .project[hidden] { display: none; }
+    .project-visual { aspect-ratio: 1.32; background: var(--yellow); border: 1px solid var(--black); position: relative; overflow: hidden; display: grid; place-items: center; }
+    .project:nth-child(even) .project-visual { background: #e8e6df; }
+    .project:nth-child(3n) .project-visual { background: #d9e2df; }
+    .project-visual img, .project-visual video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .placeholder-label { font-family: "Archivo Black"; text-transform: uppercase; text-align: center; font-size: clamp(1.4rem, 3vw, 3.1rem); line-height: .95; padding: 20px; letter-spacing: -.06em; }
+    .project-visual .number { position: absolute; top: 14px; left: 14px; background: var(--black); color: white; padding: 7px 9px; font-size: .65rem; font-weight: 800; }
+    .project-meta { display: flex; justify-content: space-between; align-items: start; gap: 18px; padding: 16px 0 0; }
+    .project-meta h3 { font-family: "Archivo Black"; text-transform: uppercase; font-size: 1.35rem; letter-spacing: -.04em; margin: 0 0 6px; }
+    .project-meta p { margin: 0; color: var(--grey); font-size: .78rem; }
+    .project-link { flex: 0 0 auto; border: 1px solid var(--black); width: 38px; height: 38px; display: grid; place-items: center; font-size: 1.2rem; }
+    .experience { background: var(--yellow); }
+    .timeline { border-top: 2px solid var(--black); }
+    .timeline-item { display: grid; grid-template-columns: .32fr 1fr .6fr; gap: 28px; padding: 25px 0; border-bottom: 1px solid rgba(17,17,17,.35); align-items: start; }
+    .timeline-item .date { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .timeline-item h3 { margin: 0 0 8px; font-family: "Archivo Black"; font-size: 1.5rem; text-transform: uppercase; letter-spacing: -.04em; }
+    .timeline-item p { margin: 0; max-width: 620px; line-height: 1.65; font-size: .88rem; }
+    .timeline-item .org { font-size: .8rem; font-weight: 700; text-align: right; }
+    .toolkit { background: var(--white); }
+    .tool-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .tool-card { border: 1px solid var(--black); padding: 25px; min-height: 260px; }
+    .tool-card:nth-child(2) { background: var(--yellow); }
+    .tool-card h3 { font-family: "Archivo Black"; font-size: 1.55rem; text-transform: uppercase; letter-spacing: -.04em; margin: 0 0 24px; }
+    .tool-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tool-list span { border: 1px solid var(--black); padding: 9px 11px; font-size: .78rem; font-weight: 700; background: rgba(255,255,255,.55); }
+    .tool-card p { color: #555; font-size: .84rem; line-height: 1.65; }
+    .contact { background: var(--black); color: var(--white); padding: 100px 0 48px; }
+    .contact .eyebrow { color: var(--yellow); }
+    .contact-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 70px; align-items: end; }
+    .contact h2 { font-family: "Archivo Black"; font-size: clamp(3.8rem, 9vw, 8.5rem); line-height: .86; letter-spacing: -.07em; text-transform: uppercase; margin: 18px 0 25px; }
+    .contact h2 span { color: var(--yellow); }
+    .contact-copy { color: #c9c9c9; line-height: 1.7; max-width: 440px; }
+    .contact-details { border-top: 1px solid #555; }
+    .contact-row { padding: 16px 0; border-bottom: 1px solid #555; display: flex; justify-content: space-between; gap: 15px; font-size: .88rem; }
+    .contact-row span:first-child { color: #aaa; }
+    .contact-row a { text-align: right; }
+    .contact-row a:hover { color: var(--yellow); }
+    .contact-form { margin-top: 30px; display: grid; gap: 12px; }
+    .contact-form input, .contact-form textarea { width: 100%; border: 1px solid #666; background: transparent; color: white; padding: 14px; outline: none; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--yellow); }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    .contact-form button { border: 0; cursor: pointer; background: var(--yellow); color: var(--black); padding: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    .footer-bottom { border-top: 1px solid #555; margin-top: 76px; padding-top: 22px; display: flex; justify-content: space-between; gap: 20px; color: #aaa; font-size: .72rem; }
+    .footer-bottom strong { color: white; font-family: "Archivo Black"; }
+    @media (max-width: 850px) {
+      .navlinks { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 22px 24px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; }
+      .navlinks.open { display: flex; }
+      .menu-toggle { display: block; }
+      .nav-cta { display: none; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-art { min-height: 360px; }
+      .portrait-placeholder { max-width: 340px; }
+      .hero-index { display: none; }
+      .about-grid { gap: 34px; }
+      .about-stamp { max-width: 250px; }
+      .tool-grid { grid-template-columns: 1fr 1fr; }
+      .timeline-item { grid-template-columns: .35fr 1fr; }
+      .timeline-item .org { grid-column: 2; text-align: left; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(var(--max), calc(100% - 32px)); }
+      .nav { min-height: 64px; }
+      .hero { padding: 48px 0; }
+      .hero h1 { font-size: clamp(3.8rem, 18vw, 6rem); }
+      section { padding: 74px 0; }
+      .section-head { display: block; margin-bottom: 34px; }
+      .section-intro { margin-top: 20px; }
+      .mini-values, .tool-grid { grid-template-columns: 1fr; }
+      .project-grid { display: block; }
+      .project { margin-bottom: 32px; }
+      .project-meta h3 { font-size: 1.15rem; }
+      .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+      .timeline-item .org { grid-column: auto; }
+      .contact h2 { font-size: clamp(3.6rem, 17vw, 5.7rem); }
+      .footer-bottom { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home"><span>PG</span> PARAS GOYAL</a>
+      <nav class="navlinks" id="navlinks">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#work">Work</a>
+        <a href="#experience">Experience</a><a href="#toolkit">Toolkit</a><a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Let's connect ↗</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="hero-kicker eyebrow">Graphic design · Creative · Digital</div>
+          <h1 class="display">Ideas<br><span class="outline">into</span><br>visuals<span style="color:#fff">.</span></h1>
+          <p class="hero-copy">I'm Paras Goyal · a graphic designer and creative enthusiast exploring the intersection of visual communication, branding and digital storytelling.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">Explore portfolio ↘</a>
+            <a class="btn secondary" href="#contact">Let's work together ↗</a>
+          </div>
+          <p class="eyebrow" style="margin-top:38px">Open to creative opportunities · Chandigarh, India</p>
+        </div>
+        <div class="hero-art">
+          <div class="portrait-placeholder">
+            <img src="images/portrait.jpg" alt="Portrait of Paras Goyal" />
+          </div>
+          <div class="floating-note">Selected works<br>2024 to 2026</div>
+        </div>
+      </div>
+      <div class="hero-index">PORTFOLIO / 001 · 2026</div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">01 / The person behind the work</div><h2 class="display">A little<br>about me.</h2></div>
+          <p class="section-intro">A creative perspective shaped by design, collaboration, campus leadership and a curiosity for visual storytelling.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-stamp"><strong>PG.</strong></div>
+          <div class="about-copy">
+            <h3>Curiosity first.<br>Design with purpose.</h3>
+            <p>I'm Paras Goyal, a pharmacy undergraduate at the University Institute of Pharmaceutical Sciences, Panjab University, Chandigarh, with a strong inclination towards graphic design, visual communication and digital media.</p>
+            <p>My creative journey involves designing social media campaigns, institutional promotional materials, scientific posters, brochures and event graphics. Through my involvement in student organisations and creative teams, I've explored how design can build identity, communicate ideas and create meaningful engagement.</p>
+            <p>Alongside graphic design, I enjoy video editing and digital content creation, bringing together visuals, motion and storytelling.</p>
+            <div class="mini-values">
+              <div class="value"><b>01 / Think</b><span>Turning ideas into clear visual concepts.</span></div>
+              <div class="value"><b>02 / Create</b><span>Designing with intention and curiosity.</span></div>
+              <div class="value"><b>03 / Collaborate</b><span>Making good work with good people.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">02 / A selection of projects</div><h2 class="display">Selected<br>works.</h2></div>
+          <p class="section-intro">A growing collection of social media creatives, institutional design, editorial layouts, event graphics and digital content.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter active" data-filter="all">All work</button>
+          <button class="filter" data-filter="leo">Leo Club</button>
+          <button class="filter" data-filter="uips">UIPS designs</button>
+          <button class="filter" data-filter="conference">Conference</button>
+        </div>
+        <div class="project-grid">
+          <article class="project" data-category="leo">
+            <div class="project-visual"><span class="number">01</span><img src="images/leo_eye_awareness.png" alt="Leo Club eye health awareness creative"></div>
+            <div class="project-meta"><div><h3>Eye Health Awareness</h3><p>Leo Club · Social media creative</p></div><a class="project-link" href="images/leo_eye_awareness.png" target="_blank" aria-label="View eye health awareness design">↗</a></div>
+          </article>
+          <article class="project" data-category="leo">
+            <div class="project-visual"><span class="number">02</span><img src="images/leo_vision_week.png" alt="Leo Club Vision Week campaign design"></div>
+            <div class="project-meta"><div><h3>Vision Week</h3><p>Leo Club · Awareness campaign</p></div><a class="project-link" href="images/leo_vision_week.png" target="_blank" aria-label="View Vision Week design">↗</a></div>
+          </article>
+          <article class="project" data-category="leo">
+            <div class="project-visual"><span class="number">03</span><img src="images/leo_di_gedi.png" alt="Leo Club Di Gedi social media graphic"></div>
+            <div class="project-meta"><div><h3>Leo Di Gedi</h3><p>Leo Club · Event promotion</p></div><a class="project-link" href="images/leo_di_gedi.png" target="_blank" aria-label="View Leo Di Gedi design">↗</a></div>
+          </article>
+          <article class="project" data-category="leo">
+            <div class="project-visual"><span class="number">04</span><img src="images/leo_orientation.png" alt="Leo Club orientation ceremony collage"></div>
+            <div class="project-meta"><div><h3>New Chapter of Leoism</h3><p>Leo Club · Event recap</p></div><a class="project-link" href="images/leo_orientation.png" target="_blank" aria-label="View Leo Club orientation design">↗</a></div>
+          </article>
+          <article class="project" data-category="leo">
+            <div class="project-visual"><span class="number">05</span><img src="images/leo_peace_poster.png" alt="Lions International Peace Poster 2026 to 2027 design"></div>
+            <div class="project-meta"><div><h3>Peace Poster 2026 to 2027</h3><p>Leo Club · Campaign design</p></div><a class="project-link" href="images/leo_peace_poster.png" target="_blank" aria-label="View Peace Poster design">↗</a></div>
+          </article>
+          <article class="project" data-category="uips">
+            <div class="project-visual"><span class="number">06</span><img src="images/uips_alumni_reunion.png" alt="UIPS Alumni Reunion poster design"></div>
+            <div class="project-meta"><div><h3>Alumni Reunion</h3><p>UIPS · Institutional design</p></div><a class="project-link" href="images/uips_alumni_reunion.png" target="_blank" aria-label="View Alumni Reunion design">↗</a></div>
+          </article>
+          <article class="project" data-category="uips">
+            <div class="project-visual"><span class="number">07</span><img src="images/uips_world_pharmacist_day.png" alt="World Pharmacist Day 2026 congratulations design"></div>
+            <div class="project-meta"><div><h3>World Pharmacist Day 2026</h3><p>UIPS · Achievement announcement</p></div><a class="project-link" href="images/uips_world_pharmacist_day.png" target="_blank" aria-label="View World Pharmacist Day design">↗</a></div>
+          </article>
+          <article class="project" data-category="uips">
+            <div class="project-visual"><span class="number">08</span><img src="images/uips_chascon.png" alt="CHASCON 2025 academic conference announcement design"></div>
+            <div class="project-meta"><div><h3>CHASCON 2025</h3><p>UIPS · Academic event communication</p></div><a class="project-link" href="images/uips_chascon.png" target="_blank" aria-label="View CHASCON design">↗</a></div>
+          </article>
+          <article class="project" data-category="conference">
+            <div class="project-visual"><span class="number">09</span><img src="images/conference_poster.png" alt="BioHybrid Neural Processor scientific conference poster"></div>
+            <div class="project-meta"><div><h3>BioHybrid Neural Processor</h3><p>Scientific conference poster · Research communication</p></div><a class="project-link" href="images/conference_poster.png" target="_blank" aria-label="View conference poster">↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">03 / Roles & collaboration</div><h2 class="display">Beyond<br>the canvas.</h2></div>
+          <p class="section-intro">Creative work is stronger when it is supported by communication, organisation and teamwork.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item"><div class="date">June 2026 to Present</div><div><h3>Marketing Chairperson</h3><p>Leading marketing initiatives, social media outreach and promotional campaigns for Leo Club Chandigarh Fortune.</p></div><div class="org">Leo Club Chandigarh Fortune</div></div>
+          <div class="timeline-item"><div class="date">August 2026 to Present</div><div><h3>Co-Head (LinkedIn)</h3><p>Contributing to institutional branding, LinkedIn communication and promotional design materials.</p></div><div class="org">Perception Team · UIPS</div></div>
+          <div class="timeline-item"><div class="date">July 2025 to Present</div><div><h3>Class Representative</h3><p>Representing students and supporting academic and extracurricular coordination.</p></div><div class="org">UIPS · Panjab University</div></div>
+          <div class="timeline-item"><div class="date">Project contribution</div><div><h3>Creative Contributor</h3><p>Designed placement-related brochure material and professional institutional communication.</p></div><div class="org">UIPS Placement Team</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolkit" id="toolkit">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">04 / Tools & capabilities</div><h2 class="display">My creative<br>toolbox.</h2></div>
+          <p class="section-intro">The applications I use to develop visual ideas, create digital content and bring projects together.</p>
+        </div>
+        <div class="tool-grid">
+          <div class="tool-card"><h3>Graphic design</h3><div class="tool-list"><span>Canva</span><span>Figma</span></div><p>Graphic design, social media creatives, poster design, typography, layouts and visual communication.</p></div>
+          <div class="tool-card"><h3>Video editing</h3><div class="tool-list"><span>CapCut</span><span>InShot</span><span>VN Video Editor</span></div><p>Short-form video editing, reels, promotional edits, event highlights and visual storytelling.</p></div>
+          <div class="tool-card"><h3>Creative skills</h3><div class="tool-list"><span>Social media</span><span>Content planning</span><span>Event graphics</span><span>Campaigns</span></div><p>Marketing communication, creative coordination, collaboration and content creation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div>
+            <div class="eyebrow">05 / Have a project in mind?</div>
+            <h2>Let's make<br><span>it happen.</span></h2>
+            <p class="contact-copy">Good ideas deserve thoughtful design and great execution. If you're looking for a creative collaborator, I'd love to hear from you.</p>
+            <form class="contact-form" id="contactForm">
+              <input id="name" name="name" placeholder="Your name" required />
+              <input id="email" name="email" type="email" placeholder="Your email address" required />
+              <textarea id="message" name="message" placeholder="Tell me a little about your project..." required></textarea>
+              <button type="submit">Send an enquiry ↗</button>
+            </form>
+          </div>
+          <div class="contact-details">
+            <div class="contact-row"><span>Email</span><a href="mailto:parasgoyal1616@gmail.com">parasgoyal1616@gmail.com</a></div>
+            <div class="contact-row"><span>Phone</span><a href="tel:+918168549748">+91 8168549748</a></div>
+            <div class="contact-row"><span>LinkedIn</span><a href="https://www.linkedin.com/in/paras-goyal-087b102b9/" target="_blank" rel="noreferrer">Connect with me ↗</a></div>
+            <div class="contact-row"><span>Location</span><span>Chandigarh, India</span></div>
+          </div>
+        </div>
+        <div class="footer-bottom"><strong>PARAS GOYAL</strong><span>Creating with purpose. Designing with perspective.</span><span>© 2026 Paras Goyal</span></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('navlinks');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+    document.querySelectorAll('.filter').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        const category = button.dataset.filter;
+        document.querySelectorAll('.project').forEach(project => {
+          project.hidden = category !== 'all' && project.dataset.category !== category;
+        });
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Portfolio enquiry from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.location.href = 'mailto:parasgoyal1616@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
